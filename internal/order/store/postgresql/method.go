@@ -43,7 +43,7 @@ func (sc *storeClient) CreateOrder(ctx context.Context, reqOrder order.Order) (i
 }
 
 func (sc *storeClient) GetOrderByID(ctx context.Context, id int64) (order.Order, error) {
-	query := fmt.Sprintf(queryGetOrder, "WHERE p.id = $1")
+	query := fmt.Sprintf(queryGetOrder, "WHERE t.id = $1")
 	// query single row
 	var odb orderDB
 	err := sc.q.QueryRowx(query, id).StructScan(&odb)

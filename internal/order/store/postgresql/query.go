@@ -8,6 +8,7 @@ const queryCreateOrder = `
 		product_id,
 		total_amount,
 		quantity,
+		status,
 		response_midtrans,
 		create_time
 	) VALUES (
@@ -15,6 +16,7 @@ const queryCreateOrder = `
 		:product_id,
 		:total_amount,
 		:quantity,
+		:status,
 		:response_midtrans,
 		:create_time
 	) RETURNING
